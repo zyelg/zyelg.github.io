@@ -626,14 +626,6 @@ html::-webkit-scrollbar {
   border: 1px solid #c78181;
 }
 
-body {
-  display: flex;
-  align-items: center; justify-content: center;
-  min-height: 100vh;
-  background: url(--light-color);
-  text-align: center;
-}
-
 /* WIDGET */
 .widget-wrap {
   width: 600px;
