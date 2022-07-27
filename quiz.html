@@ -20,7 +20,7 @@
       <div class="progress-bar" id="scroll-bar"></div>
     </div>
     <!-- Header -->
-    <header>
+    <header id="main-header">
       <!-- Nav -->
       <div class="nav container">
         <!-- Logo -->
@@ -61,10 +61,71 @@
     </header>
 
     <!-- Quiz Start -->
-  
+    <div class="quiz_container">
+      <div class="start_btn"><button>Start Quiz</button></div>
+
+      <!-- Info Box -->
+      <div class="info_box">
+        <div class="info_title">
+          <span>Some Rules of this Quiz</span>
+        </div>
+        <div class="info_list">
+          <div class="info">1. You will only have <span>15 seconds</span> per question.</div>
+          <div class="info">2. Once you select your answer, you can't reselect.</div>
+          <div class="info">3. You can't select any option once the time runs out.</div>
+          <div class="info">4. You can't exit the quiz while you are playing.</div>
+          <div class="info">5. You will get points for each correct answer.</div>
+        </div>
+        <div class="buttons">
+          <button class="quit">Exit Quiz</button>
+          <button class="restart">Continue</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quiz Box -->
+    <div class="quiz_box">
+      <header>
+        <div class="title">Red Panda Quiz</div>
+        <div class="timer">
+          <div class="time_text">Time left</div>
+          <div class="timer_sec">15</div>
+        </div>
+        <div class="time_line">
+
+        </div>
+      </header>
+      <section id="quiz_section">
+        <div class="qn_text">
+        </div>
+        <div class="option_list">
+          </div>
+      </section>
+
+      <!-- Quiz Box Footer -->
+      <footer id="quiz_footer">
+        <div class="total_qns">
+        </div>
+        <button class="next_btn">Next Qns</button>
+      </footer>
+    </div>
+
+    <!-- Result Box -->
+    <div class="result_box">
+      <div class="icon">
+        <i class="fas fa-paw"></i>
+      </div>
+      <div class="complete_text">You've completed the quiz!</div>
+      <div class="score_text">
+      </div>
+      <div class="buttons">
+        <button class="restart">Replay Quiz</button>
+        <button class="quit">Quit Quiz</button>
+      </div>
+    </div>
 
     <!-- Footer Start -->
-    <footer>
+    <footer id="main-footer">
       <div class="footer-container">
         <div class="sec aboutus">
           <h2>Our Mission</h2>
@@ -111,3 +172,12 @@
       <p>Copyright &copy; 2022 Red Panda Sanctuary. All Rights Reserved.</p>
     </div>
     <!-- Footer End -->
+
+    <!-- Link Swiper File -->
+    <script src="js/swiper-bundle.min.js"></script>
+    <!-- Link to JS Questions -->
+    <script src="js/questions.js"></script>
+    <!-- Link to JS -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
