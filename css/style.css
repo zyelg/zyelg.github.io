@@ -581,6 +581,67 @@ html::-webkit-scrollbar {
   display: none;
 }
 
+/* Quiz Section */
+/* (A) WRAPPER */
+#quizWrap {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* (B) QUESTION */
+#quizQn {
+  padding: 20px;
+  background: #4c93ba;
+  color: #fff;
+  font-size: 24px;
+  border-radius: 10px;
+}
+
+/* (C) ANSWERS */
+#quizAns {
+  margin: 10px 0;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
+}
+
+#quizAns input[type=radio] { display: none; }
+#quizAns label {
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+}
+
+#quizAns label.correct {
+  background: #d8ffc4;
+  border: 1px solid #60a03f;
+}
+
+#quizAns label.wrong {
+  background: #ffe8e8;
+  border: 1px solid #c78181;
+}
+
+body {
+  display: flex;
+  align-items: center; justify-content: center;
+  min-height: 100vh;
+  background: url(--light-color);
+  text-align: center;
+}
+
+/* WIDGET */
+.widget-wrap {
+  width: 600px;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
 /* Table Section */
 .row {
   margin-left:-5px;
