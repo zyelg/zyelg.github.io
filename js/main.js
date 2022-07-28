@@ -46,6 +46,7 @@ const continue_btn = info_box.querySelector(".buttons .restart");
 const quiz_box = document.querySelector(".quiz_box");
 const timeCount = quiz_box.querySelector(".timer .timer_sec");
 const timeLine = quiz_box.querySelector("header .time_line");
+const timeOff = quiz_box.querySelector("header .time_text");
 
 const option_list = document.querySelector(".option_list");
 
@@ -67,6 +68,13 @@ continue_btn.onclick = ()=>{
   qnsCounter(1);
   startTimer(15);
   startTimerLine(0);
+  showQuestions(qns_count);
+  qnsCounter(qns_num);
+  clearInterval(counter);
+  startTimer(timeValue);
+  clearInterval(counterLine);
+  startTimerLine(widthValue);
+  next_btn.style.display = "none";
 }
 
 let qns_count = 0;
@@ -96,6 +104,8 @@ restart_quiz.onclick = ()=> {
   startTimer(timeValue);
   clearInterval(counterLine);
   startTimerLine(widthValue);
+  next_btn.style.width = "none";
+  timeOff.textContent = "Time Left";
 }
 
 quit_quiz.onclick = ()=> {
@@ -114,7 +124,10 @@ next_btn.onclick = ()=> {
       clearInterval(counterLine);
       startTimerLine(widthValue);
       next_btn.style.display = "none";
+      timeOff.textContent = "Time Left";
   } else {
+    clearInterval(counter);
+    clearInterval(counterLine);
     console.log("No more questions left!");
     showResultBox();
   }
@@ -204,9 +217,24 @@ function startTimer(time) {
     if(time < 0) {
       clearInterval(counter);
       timeCount.textContent = "00";
+      timeOff.textContent = "Time Off";
+
+      let userAns = answer.textContent;
+      let correctAns = questions[qns_count].answer;
+
+      for (let i = 0; i < allOptions; i++) {
+        if(option_list.children[i].textContent == correctAns) {
+          option_list.children[i].setAttribute("class", "option correct");
+          option_list.children[i].insertAdjacentHTML("beforeend", tickIcon);
+        }
+      }
+      for (let i = 0; i < allOptions; i++) {
+        option_list.children[i].classList.add("disabled");
+      }
+      next_btn.style.display = "block";
+     }
     }
   }
-}
 
 function startTimerLine(time) {
   counterLine = setInterval(timer, 29);
@@ -218,7 +246,6 @@ function startTimerLine(time) {
     }
   }
 }
-
 
 function qnsCounter(index) {
   const bottom_qns_counter = quiz_box.querySelector(".total_qns");
