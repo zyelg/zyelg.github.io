@@ -219,8 +219,8 @@ function startTimer(time) {
       timeCount.textContent = "00";
       timeOff.textContent = "Time Off";
 
-      let userAns = answer.textContent;
       let correctAns = questions[qns_count].answer;
+      let allOptions = option_list.children.length;
 
       for (let i = 0; i < allOptions; i++) {
         if(option_list.children[i].textContent == correctAns) {
